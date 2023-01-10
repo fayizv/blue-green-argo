@@ -2,7 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: rollout-bluegreen-active 
-  namespace: blue-green
+  namespace: default
 spec:
   selector:
     app: rollout-bluegreen
@@ -16,7 +16,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: rollout-bluegreen-preview
-  namespace: blue-green
+  namespace: default
 spec:
   selector:
     app: rollout-bluegreen

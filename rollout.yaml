@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
   name: rollout-bluegreen
-  namespace: blue-green
+  namespace: default
 spec:
   replicas: 2
   selector:
