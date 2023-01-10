@@ -1,0 +1,21 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: blue-green
+  namespace: blue-green
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - bluegreen-gateway
+  http:
+  - match:
+    - uri:
+        exact: /
+    - uri: 
+        prefix: /
+    route:
+    - destination:
+        host: "rollout-bluegreen-active.blue-green.svc.cluster.local"
+        port:
+          number: 8080
