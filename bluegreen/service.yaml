@@ -2,13 +2,13 @@ kind: Service
 apiVersion: v1
 metadata:
   name: rollout-bluegreen-active 
-  namespace: default
+  namespace: blue-green
 spec:
   selector:
     app: rollout-bluegreen
   type: NodePort
   ports:
-  - port: 8080
+  - port: 8050
     name: http
 
 ---
@@ -16,11 +16,11 @@ kind: Service
 apiVersion: v1
 metadata:
   name: rollout-bluegreen-preview
-  namespace: default
+  namespace: blue-green
 spec:
   selector:
     app: rollout-bluegreen
   type: NodePort
   ports:
-  - port: 8080
+  - port: 8050
     name: http

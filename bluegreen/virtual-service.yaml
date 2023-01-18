@@ -2,7 +2,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
   name: blue-green
-  namespace: default
+  namespace: blue-green
 spec:
   hosts:
   - "*"
@@ -18,4 +18,4 @@ spec:
     - destination:
         host: "rollout-bluegreen-active.blue-green.svc.cluster.local"
         port:
-          number: 8080
+          number: 8050

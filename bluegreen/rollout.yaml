@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
   name: rollout-bluegreen
-  namespace: default
+  namespace: blue-green
 spec:
   replicas: 2
   selector:
@@ -18,7 +18,7 @@ spec:
         image: argoproj/rollouts-demo:blue
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 8080
+        - containerPort: 8050
   strategy:
     blueGreen:
       activeService: rollout-bluegreen-active
